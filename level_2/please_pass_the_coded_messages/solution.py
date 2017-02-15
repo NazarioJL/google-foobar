@@ -1,5 +1,4 @@
 from itertools import combinations
-from functools import reduce
 
 def answer(l):
     # sort list and reverse
