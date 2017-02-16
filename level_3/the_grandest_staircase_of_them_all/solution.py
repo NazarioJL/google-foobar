@@ -33,6 +33,9 @@ def make_stairs_count(total_remaining):
     actual sequence.
 
     """
+    # use for memoization
+    memo = {}
+
     def make_stairs_count_rec(prev_step_size, remaining):
         if remaining == 0:
             return 1
@@ -43,8 +46,12 @@ def make_stairs_count(total_remaining):
 
         for new_step_size in xrange(prev_step_size + 1, remaining + 1):
             new_remaining = remaining - new_step_size
-            result += make_stairs_count_rec(new_step_size, new_remaining)
-            # TODO: further pruning, and consider dynamic memory approach
+
+            args = (new_step_size, new_remaining)
+            if args not in memo:
+                memo[args] = make_stairs_count_rec(new_step_size, new_remaining)
+
+            result += memo[args]
 
         return result
 
