@@ -10,3 +10,6 @@ I just started learning Python and this seems like a good opportunity.
 -  [nose](http://nose.readthedocs.io/en/latest/)
 
 Feel free to make any suggestions or comments.
+
+## Testing
+Just run **nosetests** to execute tests in that directory recursively. 
