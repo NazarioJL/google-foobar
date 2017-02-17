@@ -1,4 +1,4 @@
-from solution import answer
+from ..solution import answer
 
 from nose.tools import eq_
 
