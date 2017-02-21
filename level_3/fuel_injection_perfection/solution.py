@@ -41,7 +41,7 @@ def refine_fuel(fuel_qty):
 
     while fuel_qty > 1:
         if fuel_qty % 2 == 0:
-            # number is even always, always half
+            # number is even, always divide
             fuel_qty /= 2
             yield (DIVIDE, fuel_qty)
         else:
