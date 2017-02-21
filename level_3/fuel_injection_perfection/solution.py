@@ -12,8 +12,8 @@ def answer(n):
 
 def pretty_print_operations(initial_fuel, ops):
     result = '({}) => [{}] {}'.format(initial_fuel, len(ops), str(initial_fuel))
-    for op in ops:
-        result += '->({}) {}'.format(op[0], op[1])
+    for _op in ops:
+        result += '->({}) {}'.format(_op[0], _op[1])
     print result
 
 def refine_fuel(fuel_qty):

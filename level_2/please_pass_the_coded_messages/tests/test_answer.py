@@ -1,10 +1,17 @@
-from ..solution import answer
-
 from nose.tools import eq_
 
+from ..solution import answer
+
 def test_answer():
-    eq_(4311, answer([3, 1, 4, 1]))
-    eq_(94311, answer([3, 1, 4, 1, 5, 9]))
-    eq_(0, answer([0]))
-    eq_(0, answer([]))
-    eq_(987654321, answer([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+    test_data = [
+        ([3, 1, 4, 1], 4311),
+        ([3, 1, 4, 1, 5, 9], 94311),
+        ([0], 0),
+        ([], 0),
+        ([1, 2, 3, 4, 5, 6, 7, 8, 9], 987654321)
+    ]
+
+    for _ in test_data:
+        actual = answer(_[0])
+        expected = _[1]
+        yield eq_, expected, actual

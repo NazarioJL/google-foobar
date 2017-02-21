@@ -106,7 +106,7 @@ def find_best_path(maze):
 
     for modified_maze in generate_modified_mazes(maze):
         tmp = find_path(modified_maze, width * height)
-        if tmp == None:
+        if tmp is None:
             continue
         tmp_length = len(tmp)
         if tmp_length < result:

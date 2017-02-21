@@ -1,6 +1,6 @@
-from ..solution import answer
-
 from nose.tools import eq_
+
+from ..solution import answer
 
 def test_answer():
     # define expected input / output values
@@ -10,6 +10,4 @@ def test_answer():
     }
 
     for key, expected in test_data.items():
-        eq_(expected, answer(key))
-
-
+        yield eq_, expected, answer(key)
