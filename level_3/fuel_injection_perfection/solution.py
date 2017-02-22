@@ -9,7 +9,7 @@ DECREMENT = '-'
 def answer(n):
     # the incoming value is a string, python handles big integers pretty well
     fuel = int(n)
-    return sum(1 for item in refine_fuel(fuel))
+    return sum(1 for _ in refine_fuel(fuel))
 
 
 def pretty_print_operations(initial_fuel, ops):
