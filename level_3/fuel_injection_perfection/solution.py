@@ -1,20 +1,23 @@
 import math
 
- # Define operation constants
+# Define operation constants
 DIVIDE = '/'
 INCREMENT = '+'
 DECREMENT = '-'
 
+
 def answer(n):
     # the incoming value is a string, python handles big integers pretty well
     fuel = int(n)
-    return sum(1 for item in refine_fuel(fuel))
+    return sum(1 for _ in refine_fuel(fuel))
+
 
 def pretty_print_operations(initial_fuel, ops):
     result = '({}) => [{}] {}'.format(initial_fuel, len(ops), str(initial_fuel))
     for _op in ops:
         result += '->({}) {}'.format(_op[0], _op[1])
     print result
+
 
 def refine_fuel(fuel_qty):
     """
@@ -41,7 +44,7 @@ def refine_fuel(fuel_qty):
 
     while fuel_qty > 1:
         if fuel_qty % 2 == 0:
-            # number is even always, always half
+            # number is even, always divide
             fuel_qty /= 2
             yield (DIVIDE, fuel_qty)
         else:
