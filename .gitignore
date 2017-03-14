@@ -93,3 +93,8 @@ ENV/
 
 # nosetests
 .noseids
+
+# intelliJ
+
+.idea/
+*.iml
